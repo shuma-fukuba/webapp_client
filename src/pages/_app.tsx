@@ -18,7 +18,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <div>
       <Head>
-        <title>株式会社グリットパートナーズ | GRIT Partners Group</title>
+        <title>POSSE WEB APP | PH3</title>
         <meta name="viewport" content="initial-scale=1.0,width=device-width" />
       </Head>
       <Layout>

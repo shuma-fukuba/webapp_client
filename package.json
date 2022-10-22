@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@ant-design/plots": "^1.2.2",
     "@emotion/react": "^11.10.4",
     "antd": "^4.23.6",
     "axios": "^1.1.3",
