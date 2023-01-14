@@ -4,27 +4,27 @@ import { css } from '@emotion/react'
 const PieChart = () => {
   const data = [
     {
-      type: '分类一',
+      type: 'HTML',
       value: 27,
     },
     {
-      type: '分类二',
+      type: 'CSS',
       value: 25,
     },
     {
-      type: '分类三',
+      type: 'JavaScript',
       value: 18,
     },
     {
-      type: '分类四',
+      type: 'Python',
       value: 15,
     },
     {
-      type: '分类五',
+      type: 'C',
       value: 10,
     },
     {
-      type: '其他',
+      type: 'Java',
       value: 5,
     },
   ]

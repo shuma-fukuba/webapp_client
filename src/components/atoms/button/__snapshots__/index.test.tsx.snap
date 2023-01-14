@@ -1,0 +1,523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button should render blue button with text and icon 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Group": [Function],
+      "__ANT_BUTTON": true,
+      "render": [Function],
+    }
+  }
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "1sq1xpi",
+        "next": undefined,
+        "styles": "
+  padding-top: 0.01px !important;
+  line-height: 30px !important;
+",
+        "toString": [Function],
+      },
+      Object {
+        "map": undefined,
+        "name": "1lxfvs5",
+        "next": undefined,
+        "styles": "
+    background: #005c8f;
+    border-color: #005c8f;
+    color: #fff;
+    :hover,
+    :active,
+    :focus {
+      background-color: #0077bb;
+      border-color: #0077bb;
+      color: #fff;
+    }
+  ",
+        "toString": [Function],
+      },
+    ]
+  }
+>
+  <EmotionCssPropInternal
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+    css={
+      Object {
+        "map": undefined,
+        "name": "1sg2lsz",
+        "next": undefined,
+        "styles": "
+  display: flex;
+  align-items: center;
+",
+        "toString": [Function],
+      }
+    }
+  >
+    <EmotionCssPropInternal
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="span"
+      css={
+        Object {
+          "map": undefined,
+          "name": "p2td16",
+          "next": undefined,
+          "styles": "
+  font-size: 20px;
+  margin-right: 5px;
+  display: flex;
+",
+          "toString": [Function],
+        }
+      }
+    >
+      <ForwardRef(PlusOutlined) />
+    </EmotionCssPropInternal>
+    <EmotionCssPropInternal
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="span"
+      css={
+        Object {
+          "map": undefined,
+          "name": "6btlr7",
+          "next": undefined,
+          "styles": "
+  font-size: 15px;
+",
+          "toString": [Function],
+        }
+      }
+    >
+      test
+    </EmotionCssPropInternal>
+  </EmotionCssPropInternal>
+</EmotionCssPropInternal>
+`;
+
+exports[`button should render blue button with text and without icon 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Group": [Function],
+      "__ANT_BUTTON": true,
+      "render": [Function],
+    }
+  }
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "1sq1xpi",
+        "next": undefined,
+        "styles": "
+  padding-top: 0.01px !important;
+  line-height: 30px !important;
+",
+        "toString": [Function],
+      },
+      Object {
+        "map": undefined,
+        "name": "1lxfvs5",
+        "next": undefined,
+        "styles": "
+    background: #005c8f;
+    border-color: #005c8f;
+    color: #fff;
+    :hover,
+    :active,
+    :focus {
+      background-color: #0077bb;
+      border-color: #0077bb;
+      color: #fff;
+    }
+  ",
+        "toString": [Function],
+      },
+    ]
+  }
+>
+  <EmotionCssPropInternal
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+    css={
+      Object {
+        "map": undefined,
+        "name": "1sg2lsz",
+        "next": undefined,
+        "styles": "
+  display: flex;
+  align-items: center;
+",
+        "toString": [Function],
+      }
+    }
+  >
+    <EmotionCssPropInternal
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="span"
+      css={
+        Object {
+          "map": undefined,
+          "name": "6btlr7",
+          "next": undefined,
+          "styles": "
+  font-size: 15px;
+",
+          "toString": [Function],
+        }
+      }
+    >
+      test
+    </EmotionCssPropInternal>
+  </EmotionCssPropInternal>
+</EmotionCssPropInternal>
+`;
+
+exports[`button should render gray button with text and icon 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Group": [Function],
+      "__ANT_BUTTON": true,
+      "render": [Function],
+    }
+  }
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "1sq1xpi",
+        "next": undefined,
+        "styles": "
+  padding-top: 0.01px !important;
+  line-height: 30px !important;
+",
+        "toString": [Function],
+      },
+      Object {
+        "map": undefined,
+        "name": "177ccka",
+        "next": undefined,
+        "styles": "
+    background: #a1a1a1;
+    border-color: #a1a1a1;
+    color: #fff;
+    :hover,
+    :active,
+    :focus {
+      background: #333;
+      border-color: #333;
+      color: #fff;
+    }
+  ",
+        "toString": [Function],
+      },
+    ]
+  }
+>
+  <EmotionCssPropInternal
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+    css={
+      Object {
+        "map": undefined,
+        "name": "1sg2lsz",
+        "next": undefined,
+        "styles": "
+  display: flex;
+  align-items: center;
+",
+        "toString": [Function],
+      }
+    }
+  >
+    <EmotionCssPropInternal
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="span"
+      css={
+        Object {
+          "map": undefined,
+          "name": "p2td16",
+          "next": undefined,
+          "styles": "
+  font-size: 20px;
+  margin-right: 5px;
+  display: flex;
+",
+          "toString": [Function],
+        }
+      }
+    >
+      <ForwardRef(PlusOutlined) />
+    </EmotionCssPropInternal>
+    <EmotionCssPropInternal
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="span"
+      css={
+        Object {
+          "map": undefined,
+          "name": "6btlr7",
+          "next": undefined,
+          "styles": "
+  font-size: 15px;
+",
+          "toString": [Function],
+        }
+      }
+    >
+      test
+    </EmotionCssPropInternal>
+  </EmotionCssPropInternal>
+</EmotionCssPropInternal>
+`;
+
+exports[`button should render gray button with text and without icon 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Group": [Function],
+      "__ANT_BUTTON": true,
+      "render": [Function],
+    }
+  }
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "1sq1xpi",
+        "next": undefined,
+        "styles": "
+  padding-top: 0.01px !important;
+  line-height: 30px !important;
+",
+        "toString": [Function],
+      },
+      Object {
+        "map": undefined,
+        "name": "177ccka",
+        "next": undefined,
+        "styles": "
+    background: #a1a1a1;
+    border-color: #a1a1a1;
+    color: #fff;
+    :hover,
+    :active,
+    :focus {
+      background: #333;
+      border-color: #333;
+      color: #fff;
+    }
+  ",
+        "toString": [Function],
+      },
+    ]
+  }
+>
+  <EmotionCssPropInternal
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+    css={
+      Object {
+        "map": undefined,
+        "name": "1sg2lsz",
+        "next": undefined,
+        "styles": "
+  display: flex;
+  align-items: center;
+",
+        "toString": [Function],
+      }
+    }
+  >
+    <EmotionCssPropInternal
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="span"
+      css={
+        Object {
+          "map": undefined,
+          "name": "6btlr7",
+          "next": undefined,
+          "styles": "
+  font-size: 15px;
+",
+          "toString": [Function],
+        }
+      }
+    >
+      test
+    </EmotionCssPropInternal>
+  </EmotionCssPropInternal>
+</EmotionCssPropInternal>
+`;
+
+exports[`button should render white button with text and icon 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Group": [Function],
+      "__ANT_BUTTON": true,
+      "render": [Function],
+    }
+  }
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "1sq1xpi",
+        "next": undefined,
+        "styles": "
+  padding-top: 0.01px !important;
+  line-height: 30px !important;
+",
+        "toString": [Function],
+      },
+      Object {
+        "map": undefined,
+        "name": "vqu6np",
+        "next": undefined,
+        "styles": "
+    background: #fff;
+    border-color: #005c8f;
+    color: #005c8f;
+    :hover,
+    :active,
+    :focus {
+      background: #005c8f;
+      border-color: #005c8f;
+      color: #fff;
+    }
+  ",
+        "toString": [Function],
+      },
+    ]
+  }
+>
+  <EmotionCssPropInternal
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+    css={
+      Object {
+        "map": undefined,
+        "name": "1sg2lsz",
+        "next": undefined,
+        "styles": "
+  display: flex;
+  align-items: center;
+",
+        "toString": [Function],
+      }
+    }
+  >
+    <EmotionCssPropInternal
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="span"
+      css={
+        Object {
+          "map": undefined,
+          "name": "p2td16",
+          "next": undefined,
+          "styles": "
+  font-size: 20px;
+  margin-right: 5px;
+  display: flex;
+",
+          "toString": [Function],
+        }
+      }
+    >
+      <ForwardRef(PlusOutlined) />
+    </EmotionCssPropInternal>
+    <EmotionCssPropInternal
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="span"
+      css={
+        Object {
+          "map": undefined,
+          "name": "6btlr7",
+          "next": undefined,
+          "styles": "
+  font-size: 15px;
+",
+          "toString": [Function],
+        }
+      }
+    >
+      test
+    </EmotionCssPropInternal>
+  </EmotionCssPropInternal>
+</EmotionCssPropInternal>
+`;
+
+exports[`button should render white button with text and without icon 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Group": [Function],
+      "__ANT_BUTTON": true,
+      "render": [Function],
+    }
+  }
+  css={
+    Array [
+      Object {
+        "map": undefined,
+        "name": "1sq1xpi",
+        "next": undefined,
+        "styles": "
+  padding-top: 0.01px !important;
+  line-height: 30px !important;
+",
+        "toString": [Function],
+      },
+      Object {
+        "map": undefined,
+        "name": "vqu6np",
+        "next": undefined,
+        "styles": "
+    background: #fff;
+    border-color: #005c8f;
+    color: #005c8f;
+    :hover,
+    :active,
+    :focus {
+      background: #005c8f;
+      border-color: #005c8f;
+      color: #fff;
+    }
+  ",
+        "toString": [Function],
+      },
+    ]
+  }
+>
+  <EmotionCssPropInternal
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+    css={
+      Object {
+        "map": undefined,
+        "name": "1sg2lsz",
+        "next": undefined,
+        "styles": "
+  display: flex;
+  align-items: center;
+",
+        "toString": [Function],
+      }
+    }
+  >
+    <EmotionCssPropInternal
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="span"
+      css={
+        Object {
+          "map": undefined,
+          "name": "6btlr7",
+          "next": undefined,
+          "styles": "
+  font-size: 15px;
+",
+          "toString": [Function],
+        }
+      }
+    >
+      test
+    </EmotionCssPropInternal>
+  </EmotionCssPropInternal>
+</EmotionCssPropInternal>
+`;

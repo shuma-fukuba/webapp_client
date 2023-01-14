@@ -23,6 +23,7 @@ const Content: React.FC<Props> = memo(() => {
       <div css={CircleWrapper}>
         <DemoPie />
         <DemoPie />
+
       </div>
     </div>
   )
@@ -59,6 +60,7 @@ const CircleWrapper = css`
   ${HalfStyle}
   display: flex;
   gap: 20px;
+  flex-wrap: nowrap;
 `
 
 export default Content
