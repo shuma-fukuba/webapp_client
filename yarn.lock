@@ -300,7 +300,7 @@
     "@aws-amplify/core" "5.0.10"
     tslib "^1.8.0"
 
-"@aws-amplify/core@5.0.10":
+"@aws-amplify/core@5.0.10", "@aws-amplify/core@^5.0.10":
   version "5.0.10"
   resolved "https://registry.yarnpkg.com/@aws-amplify/core/-/core-5.0.10.tgz#c933060ef180789a465308625f9bc7b1530be9d1"
   integrity sha512-Hw+O1lfii7E9HQmbVMY9HSBNtUqC+tnk26xNrFCPMY2Gtx3yxPiik7B+Ypucz/xDWQAm0GGzgsFvRpvzWM4FFA==

@@ -7,9 +7,15 @@ import { ReactElement, ReactNode, useEffect, useState } from 'react'
 import Layout from '~/components/organisms/layout/layout'
 import { useAppDispatch, useAppSelector } from '~/hooks/redux'
 import { useRouter } from 'next/router'
+import { config as awsConfig } from '~/env/aws'
 import { setCurrentUser } from '~/modules/features/auth/authSlice'
 import { Provider } from 'react-redux'
 import { store } from '~/modules/store'
+import { Amplify } from 'aws-amplify'
+import { configure } from '~/modules/requests'
+
+Amplify.configure(awsConfig)
+configure()
 
 interface AuthGuardProps {
   children: any
@@ -63,11 +69,11 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
         <title>POSSE WEB APP | PH3</title>
         <meta name="viewport" content="initial-scale=1.0,width=device-width" />
       </Head>
-      <Layout>
-        <AuthGuard>
+      <AuthGuard>
+        <Layout>
           <Component {...pageProps} />
-        </AuthGuard>
-      </Layout>
+        </Layout>
+      </AuthGuard>
     </Provider>
   )
 }
