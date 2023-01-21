@@ -1,4 +1,3 @@
-import { Entity, Id } from './base'
 export interface MonthlyLearningTimeSchema {
   date: string
   hour: number
@@ -15,27 +14,28 @@ export interface ContentCircleSchema {
 }
 
 export interface ResponseLearningLogSchema {
-  todayTime: number
-  monthlyTime: number
-  totalSum: number
-  monthlyLearningTimes: MonthlyLearningTimeSchema[]
-  languageCircleDatasets: LanguageCircleSchema[]
-  contentCircleDatasets: ContentCircleSchema[]
+  today_time: number
+  monthly_sum: number
+  total_sum: number
+  monthly_learning_times: MonthlyLearningTimeSchema[]
+  language_circle: LanguageCircleSchema[]
+  content_circle: ContentCircleSchema[]
 }
 
 export class LearningLog {
   todayTime: number
-  monthlyTime: number
+  monthlySum: number
   totalSum: number
   monthlyLearningTimes: MonthlyLearningTimeSchema[]
   languageCircleDatasets: LanguageCircleSchema[]
   contentCircleDatasets: ContentCircleSchema[]
 
   constructor(props: ResponseLearningLogSchema) {
-    this.todayTime = props.todayTime
-    this.monthlyTime = props.monthlyTime
-    this.totalSum = props.totalSum
-    this.monthlyLearningTimes = props.monthlyLearningTimes
-    this.contentCircleDatasets = props.contentCircleDatasets
+    this.todayTime = props.today_time
+    this.monthlySum = Number(props.monthly_sum)
+    this.totalSum = Number(props.total_sum)
+    this.monthlyLearningTimes = props.monthly_learning_times
+    this.contentCircleDatasets = props.content_circle
+    this.languageCircleDatasets = props.language_circle
   }
 }

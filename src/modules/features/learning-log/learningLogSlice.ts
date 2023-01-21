@@ -8,11 +8,18 @@ export interface LearningLogState {
 }
 
 const initialState: LearningLogState = {
-  learningLog: undefined,
+  learningLog: new LearningLog({
+    today_time: 0,
+    monthly_learning_times: [],
+    monthly_sum: 0,
+    total_sum: 0,
+    language_circle: [],
+    content_circle: [],
+  }),
 }
 
 export const readLearningLog = createAsyncThunk<
-  { LearningLog: LearningLog },
+  { learningLog: LearningLog },
   {},
   { rejectValue: undefined }
 >('learningLog/raedLearningLog', async (_, thunkApi) => {
@@ -29,14 +36,14 @@ export const readLearningLog = createAsyncThunk<
 })
 
 export const learningLogSlice = createSlice({
-    name: 'learningLog',
-    initialState,
-    reducers: {},
-    extraReducers: (builder) => {
-        builder.addCase(readLearningLog.fulfilled, (state, action) => {
-            state.learningLog = action.payload.LearningLog
-        })
-    }
+  name: 'learningLog',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(readLearningLog.fulfilled, (state, action) => {
+      state.learningLog = action.payload.learningLog
+    })
+  },
 })
 
 export default learningLogSlice.reducer
