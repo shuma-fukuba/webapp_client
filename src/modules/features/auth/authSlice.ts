@@ -1,3 +1,4 @@
+// Ref: https://qiita.com/hibohiboo/items/5d20423ec6ba96e0f521
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { CognitoUser } from 'amazon-cognito-identity-js'
 import { Auth } from 'aws-amplify'

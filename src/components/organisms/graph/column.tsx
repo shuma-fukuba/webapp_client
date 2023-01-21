@@ -4,41 +4,41 @@ import { css } from '@emotion/react'
 const ColumnChart = () => {
   const data = [
     {
-      type: '家具家电',
+      date: '2022/10/1',
       sales: 38,
     },
     {
-      type: '粮油副食',
+      date: '2022/10/2',
       sales: 52,
     },
     {
-      type: '生鲜水果',
+      date: '2022/10/3',
       sales: 61,
     },
     {
-      type: '美容洗护',
+      date: '2022/10/4',
       sales: 145,
     },
     {
-      type: '母婴用品',
+      date: '2022/10/5',
       sales: 48,
     },
     {
-      type: '进口食品',
+      date: '2022/10/6',
       sales: 38,
     },
     {
-      type: '食品饮料',
+      date: '2022/10/7',
       sales: 38,
     },
     {
-      type: '家庭清洁',
+      date: '2022/10/8',
       sales: 38,
     },
   ]
   const config = {
     data,
-    xField: 'type',
+    xField: 'date',
     yField: 'sales',
     xAxis: {
       label: {

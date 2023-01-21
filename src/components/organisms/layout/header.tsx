@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react'
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace'
 import { css } from '@emotion/react'
-import { PATH } from '~/const/env'
+import { PATH } from '~/env/uri'
 import { Button } from 'antd'
 
 const path = `${PATH}/logo.jpg`
