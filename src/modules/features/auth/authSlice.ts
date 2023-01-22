@@ -59,23 +59,6 @@ export const setCurrentUser = createAsyncThunk<
   }
 })
 
-export const resetPassword = createAsyncThunk<
-  any,
-  { username: string; oldPassword: string; newPassword: string },
-  { rejectValue: undefined }
->(
-  'auth/resetPassword',
-  async ({ username, oldPassword, newPassword }, thunkApi) => {
-    try {
-      const res = await Auth.changePassword(username, oldPassword, newPassword)
-      console.log(res)
-      return res
-    } catch (error) {
-      return thunkApi.rejectWithValue(undefined)
-    }
-  }
-)
-
 export const forgotPassword = createAsyncThunk(
   'auth/forgotPassword',
   async ({ username }: { username: string }, thunkApi) => {

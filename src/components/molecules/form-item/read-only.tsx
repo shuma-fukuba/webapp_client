@@ -7,7 +7,7 @@ export interface ReadOnlyItemProps {
   placeholder?: string
 }
 
-export const ReadOnlyItem: React.VFC<ReadOnlyItemProps> = ({
+export const ReadOnlyItem: React.FC<ReadOnlyItemProps> = ({
   label,
   name,
   noStyle,

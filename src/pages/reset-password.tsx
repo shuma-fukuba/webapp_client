@@ -5,12 +5,14 @@ import Button from '~/components/atoms/button'
 import { css } from '@emotion/react'
 import { useAppDispatch } from '~/hooks/redux'
 import { forgotPassword } from '~/modules/features/auth/authSlice'
+import { useRouter } from 'next/router'
 
 interface Props {}
 
 const ResetPassword: React.FC<Props> = ({}) => {
   const [loadingTransaction, setLoadingTransaction] = useState<boolean>(false)
   const dispatch = useAppDispatch()
+  const router = useRouter()
 
   const passwordResetRequest = useCallback(
     async (username: string) => {
@@ -23,7 +25,11 @@ const ResetPassword: React.FC<Props> = ({}) => {
     (values: any) => {
       setLoadingTransaction(true)
       passwordResetRequest(values.email)
-        .then(() => message.success('認証メールを送信しました。'))
+        .then(() => {
+          message.success('認証メールを送信しました。')
+          router.push('/confirm-password')
+          return
+        })
         .catch(() => {
           message.error('認証メールの送信に失敗しました。')
         })
@@ -34,7 +40,6 @@ const ResetPassword: React.FC<Props> = ({}) => {
   useEffect(() => {
     setLoadingTransaction(true)
   }, [])
-  console.log('rendered')
   return (
     <Modal
       footer={null}

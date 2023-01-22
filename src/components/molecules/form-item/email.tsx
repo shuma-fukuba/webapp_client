@@ -8,7 +8,7 @@ export interface EmailItemProps {
   prefix?: React.ReactNode
 }
 
-export const EmailItem: React.VFC<EmailItemProps> = ({
+export const EmailItem: React.FC<EmailItemProps> = ({
   name,
   label,
   prefix,
@@ -24,7 +24,7 @@ export const EmailItem: React.VFC<EmailItemProps> = ({
     >
       <Input
         prefix={prefix !== undefined ? prefix : <MailOutlined />}
-        placeholder="example@mail.com"
+        placeholder="example@posse.com"
       />
     </Form.Item>
   )

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Form, Input, Space } from 'antd'
-import { NoMargin } from '~/styles/app/spacing'
 
 export interface InputGroupProps {
   label?: string
@@ -8,13 +7,13 @@ export interface InputGroupProps {
   children?: React.ReactNode
 }
 
-export const InputGroupItem: React.VFC<InputGroupProps> = ({
+export const InputGroupItem: React.FC<InputGroupProps> = ({
   label,
   required,
   children,
 }) => {
   return (
-    <Form.Item label={label} required={required} css={NoMargin}>
+    <Form.Item label={label} required={required}>
       <Input.Group>
         <Space>{children}</Space>
       </Input.Group>

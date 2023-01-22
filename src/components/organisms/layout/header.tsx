@@ -2,9 +2,10 @@ import { memo, useCallback } from 'react'
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace'
 import { css } from '@emotion/react'
 import { PATH } from '~/env/uri'
-import { Button } from 'antd'
+import { Button, message } from 'antd'
 import { useAppDispatch } from '~/hooks/redux'
 import { signOut } from '~/modules/features/auth/authSlice'
+import { useRouter } from 'next/router'
 
 const path = `${PATH}/logo.jpg`
 
@@ -16,13 +17,17 @@ interface Props {
 const Header: React.FC<Props> = memo(
   ({ isModalVisible, setIsModalVisible }) => {
     const dispatch = useAppDispatch()
+    const router = useRouter()
     const clickHeaderButton = useCallback(() => {
       setIsModalVisible(true)
     }, [isModalVisible])
 
     const logout = useCallback(() => {
       dispatch(signOut())
-    }, [dispatch])
+      message.success('サインアウトしました')
+      router.push('/sign-in')
+      return
+    }, [dispatch, router])
 
     return (
       <header css={HeaderWrapper}>
@@ -33,7 +38,7 @@ const Header: React.FC<Props> = memo(
           </div>
           <button onClick={logout}>Sign out</button>
           <div>
-            <Button onClick={() => clickHeaderButton()}>記録・投稿 </Button>
+            <Button onClick={() => clickHeaderButton()}>記録・投稿</Button>
           </div>
         </div>
       </header>

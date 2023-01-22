@@ -28,7 +28,7 @@ export const SignInForm: React.FC = () => {
   return (
     <Form onFinish={handleSubmit}>
       <EmailItem />
-      <PasswordItem />
+      <PasswordItem name='password' message='パスワードを入力してください' />
       <div css={ButtonStyle}>
         <Form.Item noStyle>
           <Button text="サインイン" htmlType="submit" color="blue" />
