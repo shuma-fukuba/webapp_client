@@ -28,6 +28,7 @@ const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
   const { user, isCurrentUserChecked } = useAppSelector((state) => state.auth)
   const isSignedIn = !!user
   const signInPathname = '/sign-in'
+  const resetPasswordPathname = '/reset-password'
 
   useEffect(() => {
     dispatch(setCurrentUser())
@@ -37,7 +38,11 @@ const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
     if (!isCurrentUserChecked) {
       return
     }
-    if (!isSignedIn && router.pathname !== '/sign-in') {
+    if (
+      !isSignedIn &&
+      router.pathname !== '/sign-in' &&
+      router.pathname !== '/reset-password'
+    ) {
       setAccessUrl(router.asPath)
       router.push('/sign-in')
       return
@@ -49,7 +54,8 @@ const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
   }, [router, isCurrentUserChecked, accessUrl, isSignedIn])
 
   return (isCurrentUserChecked && isSignedIn) ||
-    router.pathname === signInPathname
+    router.pathname === signInPathname ||
+    router.pathname === resetPasswordPathname
     ? children
     : null
 }

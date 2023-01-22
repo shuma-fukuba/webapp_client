@@ -59,6 +59,56 @@ export const setCurrentUser = createAsyncThunk<
   }
 })
 
+export const resetPassword = createAsyncThunk<
+  any,
+  { username: string; oldPassword: string; newPassword: string },
+  { rejectValue: undefined }
+>(
+  'auth/resetPassword',
+  async ({ username, oldPassword, newPassword }, thunkApi) => {
+    try {
+      const res = await Auth.changePassword(username, oldPassword, newPassword)
+      console.log(res)
+      return res
+    } catch (error) {
+      return thunkApi.rejectWithValue(undefined)
+    }
+  }
+)
+
+export const forgotPassword = createAsyncThunk(
+  'auth/forgotPassword',
+  async ({ username }: { username: string }, thunkApi) => {
+    try {
+      await Auth.forgotPassword(username)
+    } catch (error) {
+      return thunkApi.rejectWithValue(error)
+    }
+  }
+)
+
+export const forgotPasswordSubmit = createAsyncThunk(
+  'auth/forgotPasswordSubmit',
+  async (
+    {
+      username,
+      code,
+      password,
+    }: {
+      username: string
+      code: string
+      password: string
+    },
+    thunkApi
+  ) => {
+    try {
+      await Auth.forgotPasswordSubmit(username, code, password)
+    } catch (error) {
+      return thunkApi.rejectWithValue(error)
+    }
+  }
+)
+
 export const authSlice = createSlice({
   name: 'auth',
   initialState,

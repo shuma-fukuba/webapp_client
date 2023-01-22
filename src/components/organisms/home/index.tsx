@@ -16,6 +16,7 @@ import {
   // CategoryScale,
   // LinearScale,
 } from 'chart.js'
+import { resetPassword } from '~/modules/features/auth/authSlice'
 
 ChartJS.register(...registerables)
 
@@ -27,6 +28,13 @@ const Content: React.FC<Props> = memo(() => {
 
   useEffect(() => {
     dispatch(readLearningLog({}))
+    // dispatch(
+    //   resetPassword({
+    //     username: 'calculus.fukuba@gmail.com',
+    //     oldPassword: 'Shuma-1122',
+    //     newPassword: 'sHuma-1122',
+    //   })
+    // )
   }, [dispatch])
 
   return (
