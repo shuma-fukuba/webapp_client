@@ -1,9 +1,6 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Pie } from 'react-chartjs-2'
 import { css } from '@emotion/react'
 import { PieChartSchema } from '~/entities/learning-log'
-
-ChartJS.register(ArcElement, Tooltip, Legend)
 
 interface Props {
   title: string
@@ -29,7 +26,8 @@ const PieChart: React.FC<Props> = ({ title, datasets }) => {
           'rgb(74, 23, 239)',
           'rgb(49, 5, 192)',
         ],
-        borderWidth: 0,
+        borderColor: ['#fff'],
+        borderWidth: 1,
       },
     ],
   }

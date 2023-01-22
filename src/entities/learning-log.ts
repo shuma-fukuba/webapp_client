@@ -1,6 +1,6 @@
 export interface MonthlyLearningTimeSchema {
-  date: string
-  hour: number
+  learning_time_date: string
+  learning_time: number
 }
 
 export interface PieChartSchema {

@@ -6,6 +6,18 @@ import mq from '~/styles/resusable-media-queries'
 import { useAppDispatch, useAppSelector } from '~/hooks/redux'
 import { readLearningLog } from '~/modules/features/learning-log/learningLogSlice'
 import LearningTimes from '~/components/organisms/learning-times'
+import ColumnChart from '~/components/organisms/graph/column'
+import {
+  Chart as ChartJS,
+  registerables,
+  // ArcElement,
+  // Tooltip,
+  // Legend,
+  // CategoryScale,
+  // LinearScale,
+} from 'chart.js'
+
+ChartJS.register(...registerables)
 
 interface Props {}
 
@@ -21,7 +33,9 @@ const Content: React.FC<Props> = memo(() => {
     <div css={HomeWrapper}>
       <div css={HalfStyle}>
         <LearningTimes learningLog={learningLog} />
-        <div>{/* <DemoColumn /> */}</div>
+        <div>
+          <ColumnChart datasets={learningLog.monthlyLearningTimes} />
+        </div>
       </div>
       <div css={CircleWrapper}>
         <PieChart
