@@ -3,13 +3,8 @@ export interface MonthlyLearningTimeSchema {
   hour: number
 }
 
-export interface LanguageCircleSchema {
-  language: string
-  ratio: number
-}
-
-export interface ContentCircleSchema {
-  content: string
+export interface PieChartSchema {
+  name: string
   ratio: number
 }
 
@@ -18,8 +13,8 @@ export interface ResponseLearningLogSchema {
   monthly_sum: number
   total_sum: number
   monthly_learning_times: MonthlyLearningTimeSchema[]
-  language_circle: LanguageCircleSchema[]
-  content_circle: ContentCircleSchema[]
+  language_circle: PieChartSchema[]
+  content_circle: PieChartSchema[]
 }
 
 export class LearningLog {
@@ -27,8 +22,8 @@ export class LearningLog {
   monthlySum: number
   totalSum: number
   monthlyLearningTimes: MonthlyLearningTimeSchema[]
-  languageCircleDatasets: LanguageCircleSchema[]
-  contentCircleDatasets: ContentCircleSchema[]
+  languageCircleDatasets: PieChartSchema[]
+  contentCircleDatasets: PieChartSchema[]
 
   constructor(props: ResponseLearningLogSchema) {
     this.todayTime = props.today_time

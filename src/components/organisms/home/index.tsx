@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import { memo, useEffect } from 'react'
-// import DemoPie from '~/components/organisms/graph/pie'
+import PieChart from '~/components/organisms/graph/pie'
 // import DemoColumn from '~/components/organisms/graph/column'
 import mq from '~/styles/resusable-media-queries'
 import { useAppDispatch, useAppSelector } from '~/hooks/redux'
@@ -24,8 +24,14 @@ const Content: React.FC<Props> = memo(() => {
         <div>{/* <DemoColumn /> */}</div>
       </div>
       <div css={CircleWrapper}>
-        {/* <DemoPie />
-        <DemoPie /> */}
+        <PieChart
+          title="学習言語"
+          datasets={learningLog.languageCircleDatasets}
+        />
+        <PieChart
+          title="学習コンテンツ"
+          datasets={learningLog.contentCircleDatasets}
+        />
       </div>
     </div>
   )
