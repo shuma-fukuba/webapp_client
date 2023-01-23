@@ -59,6 +59,39 @@ export const setCurrentUser = createAsyncThunk<
   }
 })
 
+export const forgotPassword = createAsyncThunk(
+  'auth/forgotPassword',
+  async ({ username }: { username: string }, thunkApi) => {
+    try {
+      await Auth.forgotPassword(username)
+    } catch (error) {
+      return thunkApi.rejectWithValue(error)
+    }
+  }
+)
+
+export const forgotPasswordSubmit = createAsyncThunk(
+  'auth/forgotPasswordSubmit',
+  async (
+    {
+      username,
+      code,
+      password,
+    }: {
+      username: string
+      code: string
+      password: string
+    },
+    thunkApi
+  ) => {
+    try {
+      await Auth.forgotPasswordSubmit(username, code, password)
+    } catch (error) {
+      return thunkApi.rejectWithValue(error)
+    }
+  }
+)
+
 export const authSlice = createSlice({
   name: 'auth',
   initialState,

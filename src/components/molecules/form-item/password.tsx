@@ -1,21 +1,31 @@
 import { LockOutlined } from '@ant-design/icons'
-import { Form, Input } from 'antd'
+import { Form, Input, message } from 'antd'
 import React from 'react'
 
-export const PasswordItem: React.VFC = () => {
+interface Props {
+  name: string
+  message: string
+  placeholder?: string
+}
+
+export const PasswordItem: React.FC<Props> = ({
+  name,
+  message,
+  placeholder,
+}) => {
   return (
     <Form.Item
-      name="password"
+      name={name}
       rules={[
         {
           required: true,
-          message: 'パスワードを入力してください。',
+          message: message,
         },
       ]}
     >
       <Input.Password
         prefix={<LockOutlined />}
-        placeholder="パスワード"
+        placeholder={placeholder}
         autoComplete="off"
       />
     </Form.Item>

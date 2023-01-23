@@ -7,7 +7,7 @@ export interface DateItemProps extends FormItemProps {
   showTime?: object | boolean
 }
 
-export const DateItem: React.VFC<DateItemProps> = ({
+export const DateItem: React.FC<DateItemProps> = ({
   format,
   picker,
   placeholder,

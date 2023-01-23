@@ -16,7 +16,7 @@ export interface NumberItemProps {
   onChange?: (e: number) => void
 }
 
-export const NumberItem: React.VFC<NumberItemProps> = ({
+export const NumberItem: React.FC<NumberItemProps> = ({
   label,
   name,
   rules,

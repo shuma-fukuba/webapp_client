@@ -9,7 +9,7 @@ interface NumberItemLabelEndProps {
   required?: boolean
 }
 
-export const NumberItemLabelEnd: React.VFC<
+export const NumberItemLabelEnd: React.FC<
   NumberItemLabelEndProps & NumberItemProps
 > = ({ label, labelEnd, required, ...numberItemProps }) => {
   return (
