@@ -15,7 +15,7 @@ export const DateItem: React.FC<DateItemProps> = ({
   ...formItemProps
 }) => {
   return (
-    <Form.Item {...formItemProps}>
+    <Form.Item {...formItemProps} required={formItemProps.required}>
       <DatePicker
         format={format}
         picker={picker}

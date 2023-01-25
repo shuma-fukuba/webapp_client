@@ -68,8 +68,8 @@ const ButtonColorStyles = {
     }
   `,
   blue: css`
-    background: #005c8f;
-    border-color: #005c8f;
+    background: linear-gradient(to right, rgb(15, 113, 189), rgb(60, 206, 254));
+    border-color: linear-gradient(to right, rgb(15, 113, 189), rgb(60, 206, 254));
     color: #fff;
     :hover,
     :active,

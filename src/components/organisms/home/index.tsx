@@ -8,6 +8,7 @@ import { readLearningLog } from '~/modules/features/learning-log/learningLogSlic
 import LearningTimes from '~/components/organisms/learning-times'
 import ColumnChart from '~/components/organisms/graph/column'
 import { Chart as ChartJS, registerables } from 'chart.js'
+import { readLangsContents } from '~/modules/features/curriculum/curriculumSlice'
 
 ChartJS.register(...registerables)
 
@@ -19,6 +20,7 @@ const Content: React.FC<Props> = memo(() => {
 
   useEffect(() => {
     dispatch(readLearningLog({}))
+    dispatch(readLangsContents())
   }, [dispatch])
 
   return (
@@ -59,6 +61,7 @@ const HomeWrapper = css`
 `
 
 const HalfStyle = css`
+  height: 435px;
   width: 50%;
 `
 
