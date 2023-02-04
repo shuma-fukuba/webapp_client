@@ -17,7 +17,7 @@ export interface SelectItemProps extends FormItemProps {
   onChange?: (value, option) => void
 }
 
-export const SelectItem: React.VFC<SelectItemProps> = ({
+export const SelectItem: React.FC<SelectItemProps> = ({
   placeholder,
   allowClear,
   mode,

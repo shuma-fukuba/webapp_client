@@ -1,5 +1,5 @@
 import { LearningLog } from '~/entities/learning-log'
-import TimeCard from './home/time-card'
+import TimeCard from '../molecules/time-card'
 import { css } from '@emotion/react'
 
 interface Props {

@@ -1,4 +1,6 @@
 import { css } from '@emotion/react'
+import { Spin } from 'antd'
+import { useAppSelector } from '~/hooks/redux'
 
 interface Props {
   title: string
@@ -6,13 +8,16 @@ interface Props {
 }
 
 const TimeCard: React.FC<Props> = ({ title, time }) => {
+  const { loadingMarkers } = useAppSelector((state) => state.learningLog)
   return (
     <div css={CardWrapper}>
-      <div css={TitleStyle}>{title}</div>
-      <div css={TimeStyle}>{time}</div>
-      <div>
-        <span css={HourTextStyle}>hour</span>
-      </div>
+      <Spin spinning={loadingMarkers}>
+        <div css={TitleStyle}>{title}</div>
+        <div css={TimeStyle}>{time}</div>
+        <div>
+          <span css={HourTextStyle}>hour</span>
+        </div>
+      </Spin>
     </div>
   )
 }
@@ -33,12 +38,12 @@ const TitleStyle = css`
 `
 
 const TimeStyle = css`
-    font-size: 26px;
-    font-weight: 700;
+  font-size: 26px;
+  font-weight: 700;
 `
 
 const HourTextStyle = css`
-    color: rgb(151, 185, 209);
+  color: rgb(151, 185, 209);
 `
 
 export default TimeCard

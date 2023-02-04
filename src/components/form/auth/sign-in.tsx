@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import { unwrapResult } from '@reduxjs/toolkit'
-import { Form, message } from 'antd'
+import { Form, notification } from 'antd'
 import React, { useCallback } from 'react'
 import Button from '~/components/atoms/button'
 import { EmailItem } from '~/components/molecules/form-item/email'
@@ -16,10 +16,12 @@ export const SignInForm: React.FC = () => {
       dispatch(signIn({ email: values.email, password: values.password }))
         .then(unwrapResult)
         .then(() => {
-          message.success('サインインしました。')
+          notification.success({ message: 'サインインしました。' })
         })
         .catch(() =>
-          message.error('メールアドレス・パスワードが一致しません。')
+          notification.error({
+            message: 'メールアドレス・パスワードが一致しません。',
+          })
         )
     },
     [dispatch]
@@ -28,7 +30,7 @@ export const SignInForm: React.FC = () => {
   return (
     <Form onFinish={handleSubmit}>
       <EmailItem />
-      <PasswordItem name='password' message='パスワードを入力してください' />
+      <PasswordItem name="password" message="パスワードを入力してください" />
       <div css={ButtonStyle}>
         <Form.Item noStyle>
           <Button text="サインイン" htmlType="submit" color="blue" />

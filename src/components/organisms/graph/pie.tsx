@@ -1,6 +1,8 @@
 import { Pie } from 'react-chartjs-2'
 import { css } from '@emotion/react'
 import { PieChartSchema } from '~/entities/learning-log'
+import { useAppSelector } from '~/hooks/redux'
+import { Spin } from 'antd'
 
 interface Props {
   title: string
@@ -8,6 +10,7 @@ interface Props {
 }
 
 const PieChart: React.FC<Props> = ({ title, datasets }) => {
+  const { loadingMarkers } = useAppSelector((state) => state.learningLog)
   const labels = datasets.map((x) => x.name)
   const values = datasets.map((x) => x.ratio)
 
@@ -46,13 +49,18 @@ const PieChart: React.FC<Props> = ({ title, datasets }) => {
 
   return (
     <div css={PieStyle}>
-      <p>{title}</p>
-      <Pie data={config} options={options} />
+      <Spin spinning={loadingMarkers}>
+        <p>{title}</p>
+        <Pie data={config} options={options} />
+      </Spin>
     </div>
   )
 }
 
 const PieStyle = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
   padding: 20px;
   background-color: #fff;
