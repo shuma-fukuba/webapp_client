@@ -1,66 +1,38 @@
-import { Column } from '@ant-design/plots'
 import { css } from '@emotion/react'
+import { MonthlyLearningTimeSchema } from '~/entities/learning-log'
+import { Bar } from 'react-chartjs-2'
+import { Spin } from 'antd'
+import { useAppSelector } from '~/hooks/redux'
 
-const ColumnChart = () => {
-  const data = [
-    {
-      date: '2022/10/1',
-      sales: 38,
-    },
-    {
-      date: '2022/10/2',
-      sales: 52,
-    },
-    {
-      date: '2022/10/3',
-      sales: 61,
-    },
-    {
-      date: '2022/10/4',
-      sales: 145,
-    },
-    {
-      date: '2022/10/5',
-      sales: 48,
-    },
-    {
-      date: '2022/10/6',
-      sales: 38,
-    },
-    {
-      date: '2022/10/7',
-      sales: 38,
-    },
-    {
-      date: '2022/10/8',
-      sales: 38,
-    },
-  ]
-  const config = {
-    data,
-    xField: 'date',
-    yField: 'sales',
-    xAxis: {
-      label: {
-        autoHide: true,
-        autoRotate: false,
+interface Props {
+  datasets: MonthlyLearningTimeSchema[]
+}
+
+const ColumnChart: React.FC<Props> = ({ datasets }) => {
+  const { loadingMarkers } = useAppSelector((state) => state.learningLog)
+  const labels = datasets.map((x) => x.learning_time_date)
+  const hours = datasets.map((x) => x.learning_time)
+
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        data: hours,
+      },
+    ],
+  }
+
+  const options = {
+    plugins: {
+      legend: {
+        display: false,
       },
     },
-    meta: {
-      type: {
-        alias: '类别',
-      },
-      sales: {
-        alias: '销售额',
-      },
-    },
-    minColumnWidth: 20,
-    maxColumnWidth: 20,
   }
   return (
-    <div>
-      <Column {...config} css={ColumnCardStyle} />
-    </div>
+    <Spin spinning={loadingMarkers}>
+      <Bar data={data} options={options} css={ColumnCardStyle} />
+    </Spin>
   )
 }
 

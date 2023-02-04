@@ -12,11 +12,12 @@ export interface NumberItemProps {
   min?: number
   max?: number
   disabled?: boolean
+  required: boolean
   formatter?: (value: any) => string
   onChange?: (e: number) => void
 }
 
-export const NumberItem: React.VFC<NumberItemProps> = ({
+export const NumberItem: React.FC<NumberItemProps> = ({
   label,
   name,
   rules,
@@ -27,9 +28,16 @@ export const NumberItem: React.VFC<NumberItemProps> = ({
   min,
   max,
   disabled,
+  required,
 }) => {
   return (
-    <Form.Item name={name} label={label} rules={rules} noStyle={noStyle}>
+    <Form.Item
+      name={name}
+      required={required}
+      label={label}
+      rules={rules}
+      noStyle={noStyle}
+    >
       <InputNumber
         placeholder={placeholder}
         css={InputNumberStyle}

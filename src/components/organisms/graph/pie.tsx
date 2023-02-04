@@ -1,60 +1,66 @@
-import { Pie } from '@ant-design/plots'
+import { Pie } from 'react-chartjs-2'
 import { css } from '@emotion/react'
+import { PieChartSchema } from '~/entities/learning-log'
+import { useAppSelector } from '~/hooks/redux'
+import { Spin } from 'antd'
 
-const PieChart = () => {
-  const data = [
-    {
-      type: 'HTML',
-      value: 27,
-    },
-    {
-      type: 'CSS',
-      value: 25,
-    },
-    {
-      type: 'JavaScript',
-      value: 18,
-    },
-    {
-      type: 'Python',
-      value: 15,
-    },
-    {
-      type: 'C',
-      value: 10,
-    },
-    {
-      type: 'Java',
-      value: 5,
-    },
-  ]
+interface Props {
+  title: string
+  datasets: PieChartSchema[]
+}
+
+const PieChart: React.FC<Props> = ({ title, datasets }) => {
+  const { loadingMarkers } = useAppSelector((state) => state.learningLog)
+  const labels = datasets.map((x) => x.name)
+  const values = datasets.map((x) => x.ratio)
+
   const config = {
-    appendPadding: 10,
-    data,
-    angleField: 'value',
-    colorField: 'type',
-    radius: 0.9,
-    label: {
-      type: 'inner',
-      offset: '-30%',
-      content: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
-      style: {
-        fontSize: 14,
-        textAlign: 'center',
-      },
-    },
-    interactions: [
+    labels: labels,
+    datasets: [
       {
-        type: 'element-active',
+        data: values,
+        backgroundColor: [
+          'rgb(3, 69, 236)',
+          'rgb(15, 113, 189)',
+          'rgb(32, 189, 222)',
+          'rgb(60, 206, 254)',
+          'rgb(178, 158, 243)',
+          'rgb(109, 70, 236)',
+          'rgb(74, 23, 239)',
+          'rgb(49, 5, 192)',
+        ],
+        borderColor: ['#fff'],
+        borderWidth: 1,
       },
     ],
   }
-  return <div css={PieStyle}>
-    <Pie {...config} />
-  </div>
+
+  const options = {
+    plugins: {
+      legend: {
+        // display: false,
+        boxWidth: 1,
+        padding: 5,
+        position: 'bottom',
+        align: 'start',
+      },
+    },
+  }
+
+  return (
+    <div css={PieStyle}>
+      <Spin spinning={loadingMarkers}>
+        <p>{title}</p>
+        <Pie data={config} options={options} />
+      </Spin>
+    </div>
+  )
 }
 
 const PieStyle = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
   padding: 20px;
   background-color: #fff;

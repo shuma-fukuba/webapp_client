@@ -1,11 +1,16 @@
 import { css } from '@emotion/react'
 import { memo, useEffect } from 'react'
-// import DemoPie from '~/components/organisms/graph/pie'
+import PieChart from '~/components/organisms/graph/pie'
 // import DemoColumn from '~/components/organisms/graph/column'
 import mq from '~/styles/resusable-media-queries'
 import { useAppDispatch, useAppSelector } from '~/hooks/redux'
 import { readLearningLog } from '~/modules/features/learning-log/learningLogSlice'
 import LearningTimes from '~/components/organisms/learning-times'
+import ColumnChart from '~/components/organisms/graph/column'
+import { Chart as ChartJS, registerables } from 'chart.js'
+import { readLangsContents } from '~/modules/features/curriculum/curriculumSlice'
+
+ChartJS.register(...registerables)
 
 interface Props {}
 
@@ -15,17 +20,26 @@ const Content: React.FC<Props> = memo(() => {
 
   useEffect(() => {
     dispatch(readLearningLog({}))
+    dispatch(readLangsContents())
   }, [dispatch])
 
   return (
     <div css={HomeWrapper}>
       <div css={HalfStyle}>
         <LearningTimes learningLog={learningLog} />
-        <div>{/* <DemoColumn /> */}</div>
+        <div>
+          <ColumnChart datasets={learningLog.monthlyLearningTimes} />
+        </div>
       </div>
       <div css={CircleWrapper}>
-        {/* <DemoPie />
-        <DemoPie /> */}
+        <PieChart
+          title="学習言語"
+          datasets={learningLog.languageCircleDatasets}
+        />
+        <PieChart
+          title="学習コンテンツ"
+          datasets={learningLog.contentCircleDatasets}
+        />
       </div>
     </div>
   )
@@ -47,6 +61,7 @@ const HomeWrapper = css`
 `
 
 const HalfStyle = css`
+  height: 435px;
   width: 50%;
 `
 
