@@ -3,7 +3,7 @@ import { EmotionJSX } from '@emotion/react/types/jsx-namespace'
 import { css } from '@emotion/react'
 import { PATH } from '~/env/uri'
 import Button from '~/components/atoms/button'
-import { message } from 'antd'
+import { message, notification } from 'antd'
 import { useAppDispatch } from '~/hooks/redux'
 import { signOut } from '~/modules/features/auth/authSlice'
 import { useRouter } from 'next/router'
@@ -25,7 +25,7 @@ const Header: React.FC<Props> = memo(
 
     const logout = useCallback(() => {
       dispatch(signOut())
-      message.success('サインアウトしました')
+      notification.success({"message": 'サインアウトしました'})
       router.push('/sign-in')
       return
     }, [dispatch, router])

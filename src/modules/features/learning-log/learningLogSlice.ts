@@ -54,7 +54,6 @@ export const createLearningLog = createAsyncThunk<
         data: body,
       })
       const { data, status } = res
-      console.log(data)
       const learningLog = new LearningLog(data)
       return { learningLog }
     } catch (error) {

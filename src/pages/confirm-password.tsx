@@ -1,4 +1,4 @@
-import { Form, Modal, message } from 'antd'
+import { Form, Modal, message, notification } from 'antd'
 import { useRouter } from 'next/router'
 import { useCallback, useEffect, useState } from 'react'
 import Button from '~/components/atoms/button'
@@ -37,18 +37,18 @@ const ConfirmPasswordForm: React.FC<Props> = ({}) => {
   const handleSubmit = useCallback((values: any) => {
     setLoading(true)
     if (values.password !== values.passwordConfirm) {
-      message.error('パスワードが一致していません。')
+      notification.error({ message: 'パスワードが一致していません。' })
       setLoading(false)
       return
     }
     submitNewPassword(values.username, values.code, values.password)
       .then(() => {
-        message.success('パスワードを更新しました。')
+        notification.success({ message: 'パスワードを更新しました。' })
         router.push('/sign-in')
         return
       })
       .catch((e) => {
-        message.error('パスワードの更新に失敗しました。')
+        notification.error({ message: 'パスワードの更新に失敗しました。' })
         return
       })
   }, [])
@@ -63,7 +63,7 @@ const ConfirmPasswordForm: React.FC<Props> = ({}) => {
     >
       <Form onFinish={handleSubmit}>
         <EmailItem name="username" />
-        <NumberItem name="code" placeholder="code" />
+        <NumberItem required name="code" placeholder="code" />
         <PasswordItem
           name="password"
           message="新しいパスワードを入力してください。"

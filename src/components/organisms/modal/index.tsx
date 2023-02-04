@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { Form, Modal, Spin, message } from 'antd'
+import { Form, Modal, Spin, notification } from 'antd'
 import { memo, useCallback } from 'react'
 import Button from '~/components/atoms/button'
 import { DateItem } from '~/components/molecules/form-item/date'
@@ -71,10 +71,10 @@ const ModalCard: React.FC<Props> = memo(
           })
         )
           .then(() => {
-            message.success('記録に成功しました。')
+            notification.success({ message: '記録に成功しました。' })
             dispatch(readLearningLog({}))
           })
-          .catch(() => message.error('記録に失敗しました。'))
+          .catch(() => notification.error({message: '記録に失敗しました。'}))
           .finally(() => setLoadingMarkers(false))
       },
       [dispatch]
